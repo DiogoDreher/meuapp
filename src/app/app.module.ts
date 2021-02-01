@@ -17,17 +17,20 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostComponent } from './post/post.component';
+import { PostDialogComponent } from './post-dialog/post-dialog.component';
+import { PostService } from './post.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostComponent
+    PostComponent,
+    PostDialogComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule, 
+    FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
     HttpClientModule,
@@ -43,7 +46,10 @@ import { PostComponent } from './post/post.component';
     MatChipsModule,
     MatBadgeModule,
   ],
-  providers: [],
+  providers: [
+    PostService
+  ],
+  entryComponents: [PostDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
